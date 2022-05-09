@@ -18,5 +18,5 @@ _(Apresentar os pressupostos utilizados na modelação do problema, estes pressu
 
 
 ---
-[< Previous](rei00.md) | [^ Main](https://github.com/exemploTrabalho/reportSIBD/) | [Next >](rei02.md)
+[< Previous](rei00.md) | [^ Main](https://https://github.com/SIBD08/SIBD08-Atlas/) | [Next >](rei02.md)
 :--- | :---: | ---: 
