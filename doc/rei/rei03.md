@@ -4,7 +4,7 @@
 _(Introduzir as entidade-tipo e associações do sistema, adicionalmente apresentar o diagrama do modelo Entidade-Associação.)_
 
 Exemplo de inserção de uma imagem:   
-![An alternative description](images/image02.png)   
+![An alternative description](images/image02.jpg)   
 
 Always add a description to help the user understand the figure 
 
