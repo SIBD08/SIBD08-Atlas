@@ -21,6 +21,8 @@ ASSOCIAÇÕES
  
 ![Diagrama](images/DiagramaAtlas.jpeg) 
 
+## Regras de negócio adicionais (Restrições)
+
 Para ser selecionado para condutor da nossa empresa tem de ter a carta de condução de pesados.
 Pode existir troca de turnos entre funcionários do mesmo grupo, nunca um funcionário de armazém pode trocar de turno com um condutor.
 
