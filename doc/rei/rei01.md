@@ -14,8 +14,9 @@ Os clientes são identificados por nome e código de cliente.
 
 ## Modelação do problema
 
-_(Apresentar os pressupostos utilizados na modelação do problema, estes pressupostos poderão não estar na descrição do trabalho)_
-
+O nosso trabalho modelou o problema da gestão dos horários dos funcionários e o tempo de cada viagem. 
+Por um lado, a gestão dos horários dos funcionários que muitas vezes estão desorganizados fazendo com muitos funcionários façam horas extra sem serem remunerados pelas mesmas.
+Por outro lado, o tempo de cada viagem é irregular, criando uma dificuldade na planificação de um percurso para melhor fazer as entregas.
 
 ---
 [< Previous](rei00.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) | [Next >](rei02.md)
