@@ -1,17 +1,28 @@
 # C3 : Esquema conceptual
 
 ## Modelo E/A
-_(Introduzir as entidade-tipo e associações do sistema, adicionalmente apresentar o diagrama do modelo Entidade-Associação.)_
+
+ENTIDADES
+
+* CAMIAO (matricula, capacidade, autonomia)
+* VIAGEM (codigo, origem, destino, limiteCarga)
+* SUBSIDIARIA (codigo, nome, telefone)
+* ENCOMENDA (codigo, destino)
+* GRUPO (armazem, condutores)
+* FUNCIONARIO (nome, telefone, morada, cc, nfuncionario)
+* CLIENTE (nome, codigo)
+
+ASSOCIAÇÕES
+
+* atribuidoA (CAMIAO, VIAGEM, FUNCIONARIO) M:N T/P
+* dividoPor (FUNCIONARIO, GRUPO) 1:N T/P
+* entrega (CAMIAO, CLIENTE, ENCOMENDA, SUBSIDIARIA) 1:1 P/T
 
 Exemplo de inserção de uma imagem:   
-![An alternative description](images/image02.jpg)   
+![An alternative description](images/DiagramaAtlas.jpeg) 
 
-Always add a description to help the user understand the figure 
-
-NOTA: Cada entidade-tipo e cada associação devem ter um pequeno texto – um ou dois parágrafos – para descrever esse elemento do modelo e os seus atributos)
-
-## Regras de negócio adicionais (Restrições)
-_(Apresentar uma lista detalhada das regras e restrições não possíveis de representar no modelo E/A, que visam a manutenção da consistência e integridade da modelação do problema)_
+Para ser selecionado para condutor da nossa empresa tem de ter a carta de condução de pesados.
+Pode existir troca de turnos entre funcionários do mesmo grupo, nunca um funcionário de armazém pode trocar de turno com um condutor.
 
 ---
 [< Previous](rei02.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) |
