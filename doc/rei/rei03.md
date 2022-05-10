@@ -18,8 +18,8 @@ ASSOCIAÇÕES
 * dividoPor (FUNCIONARIO, GRUPO) 1:N T/P
 * entrega (CAMIAO, CLIENTE, ENCOMENDA, SUBSIDIARIA) 1:1 P/T
 
-Exemplo de inserção de uma imagem:   
-![An alternative description](images/DiagramaAtlas.jpeg) 
+ 
+![Diagrama](images/DiagramaAtlas.jpeg) 
 
 Para ser selecionado para condutor da nossa empresa tem de ter a carta de condução de pesados.
 Pode existir troca de turnos entre funcionários do mesmo grupo, nunca um funcionário de armazém pode trocar de turno com um condutor.
