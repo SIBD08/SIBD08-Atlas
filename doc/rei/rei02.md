@@ -1,10 +1,19 @@
 # C2 : Especificação de Requisitos
 
-As opções disponíveis no sistema … dependerão de … 
+Os funcionários da nossa empresa estão divididos em 2 grupos: os que 
+trabalham no armazém e os condutores.
 
-Assim, … poderá ter acesso às seguintes funcionalidades: …
+Os funcionários de armazém têm acesso a:
 
-_(Descrever os tipos de utilizadores (actores) do sistema de informação e as funcionalidade (casos de uso) a que estes terão acesso)_
+- gerenciamento das encomendas;
+- organização das encomendas para colocar nos camiões;
+- receber pagamento no primeiro dia do mês.
+
+Os condutores têm acesso a:
+
+- um camião para cada condutor;
+- localização de todas as encomendas para entrega;
+- receber pagamento no primeiro dia do mês.
 
 ---
 [< Previous](rei01.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) | [Next >](rei03.md)
