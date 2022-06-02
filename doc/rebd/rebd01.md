@@ -7,8 +7,7 @@ _(Relembrar a descrição do trabalho apresentada no REI, utilizando linguagem n
 
 ## Descrição dos requisitos do utilizador
 
-_(Descrever os tipos de utilizadores (actores) do sistema de informação e as funcionalidade (casos de uso) a que estes terão acesso. Permite refinar os requisitos apresentados no REI.)_
-
+Casos de uso: Gestão de encomendas, Organização das encomendas por camião, Registo de pagamentos e Registo de encomenda
 
 ---
 [< Previous](rebd00.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) | [Next >](rebd02.md)
