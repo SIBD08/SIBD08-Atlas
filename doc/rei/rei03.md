@@ -4,19 +4,22 @@
 
 ENTIDADES
 
-* CAMIAO (matricula, capacidade, autonomia)
-* VIAGEM (codigo, origem, destino, limiteCarga)
-* SUBSIDIARIA (codigo, nome, telefone)
-* ENCOMENDA (codigo, destino)
-* GRUPO (armazem, condutores)
-* FUNCIONARIO (nome, telefone, morada, cc, nfuncionario)
-* CLIENTE (nome, codigo)
+* CLIENTE (codigo, nome)
+* ENCOMENDA (codigo)
+* SUBSIDIARIA (codigo, nome, contacto)
+* VIAGEM (codigo)
+* CAMIAO (matricula_, autonomia, capacidadeCarga)
+* FUNCIONARIO (numFuncionario, nome, telemovel, morada, cc)
+* FUNCAO (armazem, condutor)
 
-ASSOCIAÇÕES
+ASSOCIAÇÔES
 
-* atribuidoA (CAMIAO, VIAGEM, FUNCIONARIO) M:N T/P
-* dividoPor (FUNCIONARIO, GRUPO) 1:N T/P
-* entrega (CAMIAO, CLIENTE, ENCOMENDA, SUBSIDIARIA) 1:1 P/T
+* referenteA (CLIENTE, ENCOMENDA) 1:N P/T
+* destino (ENCOMENDA, SUBSIDIARIA, VIAGEM) N:1
+* limiteCarga (ENCOMENDA, VIAGEM, CAMIAO) N:1 T/P
+* condutor (CAMIAO, FUNCIONARIO) 1:1 
+* desempenhadoPor (FUNCIONARIO, FUNCAO) N:1 
+* origem (SUBSIDIARIA, VIAGEM) N:1
 
  
 ![Diagrama](images/Diagrama_Atlas.jpeg) 
