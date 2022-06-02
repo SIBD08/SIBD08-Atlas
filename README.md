@@ -7,10 +7,9 @@ Projeto desenvolvido pelo grupo SIBD08
 A nossa empresa chama-se “Atlas”, de transporte de mercadorias. A empresa é constituída por uma frota de camiões, cada um tem uma matrícula, capacidade de carga e autonomia de viagem.
 
 ## Reports
-_Please add a hyperlink per Report.
 
-:[REI](doc/rei/rei00.md)
-:[REBD](doc/rebd/rebd00.md)
+* :[REI](doc/rei/rei00.md)
+* :[REBD](doc/rebd/rebd00.md)
 
 ## Team
 * Eduardo Fernandes 27829
