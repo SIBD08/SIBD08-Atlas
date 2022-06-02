@@ -8,6 +8,7 @@ _(Relembrar a descrição do trabalho apresentada no REI, utilizando linguagem n
 ## Descrição dos requisitos do utilizador
 
 Casos de uso: Gestão de encomendas, Organização das encomendas por camião, Registo de pagamentos e Registo de encomenda
+Os Tipos de utilizadores são empresas que precisem de ajuda com a logistica na distribuição de encomendas/mercadorias
 
 ---
 [< Previous](rebd00.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) | [Next >](rebd02.md)
