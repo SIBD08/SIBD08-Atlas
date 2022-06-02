@@ -8,8 +8,8 @@ A nossa empresa chama-se “Atlas”, de transporte de mercadorias. A empresa é
 
 ## Reports
 
-* :[REI](doc/rei/rei00.md)
-* :[REBD](doc/rebd/rebd00.md)
+* [REI](doc/rei/rei00.md)
+* [REBD](doc/rebd/rebd00.md)
 
 ## Team
 * Eduardo Fernandes 27829
