@@ -8,8 +8,6 @@
 
 ## Group 08
 
-_Don't forget to add the group elements_
-
 * Eduardo Fernandes 27829
 * Rui Pereira 39534
 * Pedro Valente 38182
