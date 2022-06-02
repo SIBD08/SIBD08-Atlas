@@ -12,7 +12,7 @@ Os funcionários da nossa empresa estão divididos em 2 grupos: os que trabalham
 Os dois grupos de funcionários têm um nome, número de telemóvel, morada, número de cartão de cidadão e número de funcionário.
 Os clientes são identificados por nome e código de cliente.
 
-A organização de encomenda é efetuada através do codigo, por outro, lado o registo de pagamento é feito através de pagamento electrónico.
+A organização de encomenda é efetuada através do codigo, por outro lado, o registo de pagamento é feito através de pagamento electrónico.
 
 ## Descrição dos requisitos do utilizador
 
