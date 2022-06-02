@@ -14,5 +14,5 @@
 * Rafael Cadilhe 38597
 
 ---
-< Previous | [^ Main](https://github.com/exemploTrabalho/reportSIBD/) | [Next >](rei01.md)
-:--- | :---: | ---: 
+[^ Main](https://github.com/exemploTrabalho/reportSIBD/) | [Next >](rei01.md)
+:--- | :---: | 
