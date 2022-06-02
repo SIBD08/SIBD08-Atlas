@@ -19,7 +19,7 @@ ASSOCIAÇÕES
 * entrega (CAMIAO, CLIENTE, ENCOMENDA, SUBSIDIARIA) 1:1 P/T
 
  
-![Diagrama](images/DiagramaAtlas.jpeg) 
+![Diagrama](images/Diagrama_Atlas.jpeg) 
 
 ## Regras de negócio adicionais (Restrições)
 
