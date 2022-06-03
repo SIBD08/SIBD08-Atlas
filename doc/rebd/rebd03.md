@@ -1,15 +1,5 @@
 # C3 : Normalização
 
-## Relações
-_(Apresentar as relações obtidas da transformação direta a partir do modelo EA)_
-
-## Normalização do Esquema Relacional
-_(Apresentar o estudo da normalização das relações obtidas na secção anterior. Desnormalizar se necessário.)_
-
----
-
-# C3 : Normalização
-
 ## Conversão do Modelo EA para Modelo Relacional
 
 ### Passo 1: Entidade Tipo
@@ -104,55 +94,44 @@ Não existem Entidades Fracas
 ## Relacoes 
 
 
-|Funcionario|    |      |   |         |                   |
-|-----------|----|------|---|---------|-------------------|
-|_n.id      |nome|morada|nic|telefone*|#_parteDia -> Turno|
+|Cliente |    | 
+|--------|----|
+|_codigo  |nome|
 
-|Formacao     |            |    
-|-------------|------------|
-|_tipoFormacao|nomeFormacao|
+|Encomenda    |              |    
+|-------------|--------------|
+|_codigo | #_codigo->Cliente|
 
-|Turno    |    |                 |                    |
+|Subsidiario    |    |                 |                    |
 |---------|----|-----------------|--------------------|
-|_parteDia|hora|#_gerencia->Turno|#_diaSemana->Horario|
+|_codigo|nome|contacto|#_codigo->Viagem|
 
-|Horario   |       |          |      
-|----------|-------|----------|
-|_diaSemana|horaFim|horaInicio|
+|Viagem   |     
+|----------|
+|_codigo|
 
-|Seccao   |         |          |         |                        |           |
-|---------|---------|----------|---------|------------------------|-----------|
-|_gerencia|cosmetico|fornecedor|reposicao|caixa|perfumaria|limpeza|maquilhagem|
+|Camiao  |         |          |
+|---------|---------|----------|
+|_matricula|autonomia|capacidadeCarga|
 
-|Fornecedor|    |         |         |
-|----------|----|---------|---------|
-|_id       |nome|tipoStock|telefone*|
-
-
-|Produto|    |           |        |
-|-------|----|-----------|--------|
-|_codigo|nome|tipoProduto|validade|
-
-|Entrega     |        |       |          |                |
-|------------|--------|-------|----------|----------------|
-|_tipoProduto|validade|reserva|quantidade|#_id->Fornecedor|
+|Funcionario|    |         |         |       |                        |                   |                  |
+|-----------|----|---------|---------|-------|------------------------|-------------------|-----------------|
+|_numFuncionario | nome | telemovel | morada | cc | #_matricula->camiao | #armazem->funcao | #condutor->funcao |
 
 
-|PrecisaDe          |                        |
-|-------------------|------------------------|
-|#_n.id->Funcionario|#_tipoFormacao->Formacao|
+|Funcao|    |
+|-------|----|
+|armazem|condutor|
 
-|Envia                 |                 |        
-|----------------------|-----------------|
-|#_tipoProduto->Entrega|#_codigo->Produto|
+|Destino   |        |       |
+|------------|--------|-------|
+|#_codigo->Encomenda|#_codigo->Subsidiario|#_codigo->Viagem |
 
-|Contacto           |                 |        |
-|-------------------|-----------------|--------|
-|#_n.id->Funcionario|#_codigo->Produto|telefone|
 
-|Tem             |                  |                     |             
-|----------------|------------------|---------------------|
-|#_id->Fornecedor|#_gerencia->Seccao|#p_diaSemana->Horario|
+|LimiteCarga         |                        |                |
+|-------------------|------------------------|--------------|
+|#_codigo->Encomenda|#_codigo->viagem|#_matricula->Camiao
+
 
 
 ## Normalização do Esquema Relacional
@@ -330,5 +309,6 @@ Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
 Contacto (#_n.id -> Funcionario, #_id -> Fornecedor, telefone)
 
 Tem ( #_id -> Fornecedor, #_gerencia -> Seccao, #_diaSemana ->Horario)
+
 [< Previous](rebd02.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) | [Next >](rebd04.md)
 :--- | :---: | ---: 
