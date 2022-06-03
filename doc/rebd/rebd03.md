@@ -138,177 +138,129 @@ Não existem Entidades Fracas
 
 # 1ª Forma Normal (1NF)
 
-Funcionario (_n.id, #nome, morada, nic
-#_parteDia -> Turno)
+Cliente (_codigo, nome)
 
-  Telefonefuncionario (_nome, telefone)
+Encomenda (_codigo, #_codigo->Cliente)
 
-Formacao (_tipoFormacao, nomeFormacao)
+Subsidiaria (_codigo, nome, #_codigo->Viagem)
 
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
+ContactoSubsidiaria (_nome, contacto)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Viagem (_codigo)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Fornecedor (_id, #nome, tipoStock)
-  
-  Telefonefornecedor (_nome, telefone)
+Funcionario (_numFuncionario, nome, morada, cc, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
 
-Produto (_codigo, nome, tipoProduto, validade)
+TelemovelFuncionario (_nome, telemovel)
 
-Entrega (_tipoProduto, validade, reserva, quantidade
-#_id -> Fornecedor)
+Funcao (armazém,condutor)
 
-Precisade (#_n.id -> Funcionario, #_tipoFormacao -> Formacao)
+Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
 
-Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
-
-Contacto (#_n.id -> Funcionario, #_id -> Fornecedor, telefone)
-
-Tem ( #_id -> Fornecedor, #_gerencia -> Seccao, #_diaSemana ->Horario)
-
+LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
 
 # 2ª Forma Normal (2NF)
 
-Funcionario (_n.id, #nome, morada, nic
-#_parteDia -> Turno)
+Cliente (_codigo, nome)
 
-  Telefonefuncionario (_nome, telefone)
+Encomenda (_codigo, #_codigo->Cliente)
 
-Formacao (_tipoFormacao, nomeFormacao)
+Subsidiaria (_codigo, nome, #_codigo->Viagem)
 
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
+ContactoSubsidiaria (_nome, contacto)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Viagem (_codigo)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Fornecedor (_id, #nome, tipoStock)
-  
-  Telefonefornecedor (_nome, telefone)
+Funcionario (_numFuncionario, nome, morada, cc, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
 
-Produto (_codigo, nome, tipoProduto, validade)
+TelemovelFuncionario (_nome, telemovel)
 
-Entrega (_tipoProduto, validade, reserva, quantidade
-#_id -> Fornecedor)
+Funcao (armazém,condutor)
 
-Precisade (#_n.id -> Funcionario, #_tipoFormacao -> Formacao)
+Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
 
-Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
-
-Contacto (#_n.id -> Funcionario, #_id -> Fornecedor, telefone)
-
-Tem ( #_id -> Fornecedor, #_gerencia -> Seccao, #_diaSemana ->Horario)
-
+LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
 
 # 3ª Forma Normal (3NF)
 
-Funcionario (_n.id, #nome, morada, nic
-#_parteDia -> Turno)
+Cliente (_codigo, nome)
 
-  Telefonefuncionario (_nome, telefone)
+Encomenda (_codigo, #_codigo->Cliente)
 
-Formacao (_tipoFormacao, nomeFormacao)
+Subsidiaria (_codigo, nome, #_codigo->Viagem)
 
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
+ContactoSubsidiaria (_nome, contacto)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Viagem (_codigo)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Fornecedor (_id, #nome, tipoStock)
-  
-  Telefonefornecedor (_nome, telefone)
+Funcionario (_numFuncionario, nome, morada, cc, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
 
-Produto (_codigo, nome, tipoProduto, validade)
+TelemovelFuncionario (_nome, telemovel)
 
-Entrega (_tipoProduto, validade, reserva, quantidade
-#_id -> Fornecedor)
+Funcao (armazém,condutor)
 
-Precisade (#_n.id -> Funcionario, #_tipoFormacao -> Formacao)
+Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
 
-Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
-
-Contacto (#_n.id -> Funcionario, #_id -> Fornecedor, telefone)
-
-Tem ( #_id -> Fornecedor, #_gerencia -> Seccao, #_diaSemana ->Horario)
+LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
 
 
 # Forma Normal de Boyce-Codd (BCNF)
 
-Funcionario (_n.id, #nome, morada, nic
-#_parteDia -> Turno)
+Cliente (_codigo, nome)
 
-  TELEFONEFUNCIONARIO (_nome, telefone)
+Encomenda (_codigo, #_codigo->Cliente)
 
-Formacao (_tipoFormacao, nomeFormacao)
+Subsidiaria (_codigo, nome, #_codigo->Viagem)
 
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
+ContactoSubsidiaria (_nome, contacto)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Viagem (_codigo)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Fornecedor (_id, #nome, tipoStock)
-  
-  TELEFONEFORNECEDOR (_nome, telefone)
+Funcionario (_numFuncionario, nome, morada, cc, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
 
-Produto (_codigo, nome, tipoProduto, validade)
+TelemovelFuncionario (_nome, telemovel)
 
-Entrega (_tipoProduto, validade, reserva, quantidade
-#_id -> Fornecedor)
+Funcao (armazém,condutor)
 
-Precisade (#_n.id -> Funcionario, #_tipoFormacao -> Formacao)
+Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
 
-Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
+LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
 
-Contacto (#_n.id -> Funcionario, #_id -> Fornecedor, telefone)
-
-Tem ( #_id -> Fornecedor, #_gerencia -> Seccao, #_diaSemana ->Horario)
 
 # 4ª Forma Normal (4NF)
 
-Funcionario (_n.id, #nome
-#_parteDia -> Turno)
+Cliente (_codigo, nome)
 
-  Localidade (_nome, morada)
-  
-  Identificacao (_nome, nic)
+Encomenda (_codigo, #_codigo->Cliente)
 
-  Telefonefuncionario (_nome, telefone)
+Subsidiaria (_codigo, nome, #_codigo->Viagem)
 
-Formacao (_tipoFormacao, nomeFormacao)
+ContactoSubsidiaria (_nome, contacto)
 
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
+Viagem (_codigo)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Funcionario (_numFuncionario, nome, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
 
-Fornecedor (_id, #nome, tipoStock)
-  
-  Telefonefornecedor (_nome, telefone)
+LocalidadeFuncionario (_nome, morada)
 
-Produto (_codigo, nome, tipoProduto, validade)
+IdentificacaoFuncionario (_nome, cc)
 
-Entrega (_tipoProduto, validade, #reserva
-#_id -> Fornecedor)
+TelemovelFuncionario (_nome, telemovel)
 
-  Reservaquantidade (_reserva, quantidade)
+Funcao (armazém,condutor)
 
-Precisade (#_n.id -> Funcionario, #_tipoFormacao -> Formacao)
+Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
 
-Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
-
-Contacto (#_n.id -> Funcionario, #_id -> Fornecedor, telefone)
-
-Tem ( #_id -> Fornecedor, #_gerencia -> Seccao, #_diaSemana ->Horario)
+LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
 
 [< Previous](rebd02.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) | [Next >](rebd04.md)
 :--- | :---: | ---: 
