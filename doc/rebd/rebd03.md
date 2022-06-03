@@ -12,135 +12,92 @@ _(Apresentar o estudo da normalização das relações obtidas na secção anter
 
 ## Conversão do Modelo EA para Modelo Relacional
 
-### Passo 1: Entidades e Atributos
+### Passo 1: Entidade Tipo
 
-Funcionario (_n.id, nome, morada, nic, telefone*)
+Cliente (_codigo, nome)
 
-Formacao (_tipoFormacao, nomeFormacao)
+Encomenda (_codigo)
 
-Turno (_parteDia, hora)
+Subsidiaria (_codigo, nome, contacto)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Viagem (_codigo)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Fornecedor (_id, nome, tipoStock, telefone*)
+Funcionario (_numFuncionario, nome, telemóvel, morada, cc)
 
-Produto (_codigo, nome, tipoProduto, validade)
-
-Entrega(_tipoProduto, validade, reserva, quantidade)
+Funcao (armazém,condutor)
 
 ### Passo 2: Associações 1:1
-Não existe associações de carnalidade 1:1
 
-#### Passo 3: Associações 1:N
+Cliente (_codigo, nome)
 
-Funcionario (_n.id, nome, morada, nic, telefone*
-#_parteDia -> Turno)
+Encomenda (_codigo)
 
-Formacao (_tipoFormacao, nomeFormacao)
+Subsidiaria (_codigo, nome, contacto)
 
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
+Viagem (_codigo)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Funcionario (_numFuncionario, nome, telemóvel, morada, cc
+#_matricula->camiao)
 
-Fornecedor (_id, nome, tipoStock, telefone*)
+Funcao (armazém,condutor)
 
-Produto (_codigo, nome, tipoProduto, validade)
+### Passo 3: Associações 1:N
 
-Entrega (_tipoProduto, validade, reserva, quantidade
-#_id -> Fornecedor)
+Cliente (_codigo, nome)
 
-### Passo 4: Associações N:M
+Encomenda (_codigo,
+#_codigo->Cliente)
 
-Funcionario (_n.id, nome, morada, nic, telefone*
-#_parteDia -> Turno)
+Subsidiaria (_codigo, nome, contacto,
+#_codigo->Viagem)
 
-Formacao (_tipoFormacao, nomeFormacao)
+Viagem (_codigo)
 
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Funcionario (_numFuncionario, nome, telemóvel, morada, cc,
+#_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Funcao (armazém,condutor)
 
-Fornecedor (_id, nome, tipoStock, telefone*)
+### Parte 4: Associações N:M
 
-Produto (_codigo, nome, tipoProduto, validade)
+Não existem associações com cardinalidade N:M
 
-Entrega (_tipoProduto, validade, reserva, quantidade
-#_id -> Fornecedor)
+### Parte 5: Atributo Multivalor 
 
-Precisade ( #_n.id -> Funcionario, #_tipoFormacao -> Formacao)
+Não existem Atributos Multivalor
 
-Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
+### Parte 6: Associações ternárias 
 
-### Passo 5: Atributo Multivalor
+Cliente (_codigo, nome)
 
-Funcionario (_n.id, nome, morada, nic, telefone*
-#_parteDia -> Turno)
+Encomenda (_codigo,
+#_codigo->Cliente)
 
-Formacao (_tipoFormacao, nomeFormacao)
+Subsidiaria (_codigo, nome, contacto,
+#_codigo->Viagem)
 
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
+Viagem (_codigo)
 
-Horario (_diaSemana, horaFim, horaInicio)
+Camiao (_matricula, autonomia, capacidadeCarga)
 
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
+Funcionario (_numFuncionario, nome, telemóvel, morada, cc,
+#_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
 
-Fornecedor (_id, nome, tipoStock, telefone*)
+Funcao (armazém,condutor)
 
-Produto (_codigo, nome, tipoProduto, validade)
+Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
 
-Entrega (_tipoProduto, validade, reserva, quantidade
-#_id -> Fornecedor)
-
-Precisade (#_n.id -> Funcionario, #_tipoFormacao -> Formacao)
-
-Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
-
-Contacto (#_n.id -> Funcionario, #_id -> Fornecedor, telefone)
-
-
-### Passo 6: Associação ternária
-
-
-Funcionario (_n.id, nome, morada, nic, telefone*
-#_parteDia -> Turno)
-
-Formacao (_tipoFormacao, nomeFormacao)
-
-Turno (_parteDia, hora
-#_gerencia -> Turno, #_diaSemana -> Horario)
-
-Horario (_diaSemana, horaFim, horaInicio)
-
-Seccao (_gerencia, cosmético, fornecedor, reposição, caixa, perfumaria, limpeza, maquilhagem)
-
-Fornecedor (_id, nome, tipoStock, telefone*)
-
-Produto (_codigo, nome, tipoProduto, validade)
-
-Entrega (_tipoProduto, validade, reserva, quantidade
-#_id -> Fornecedor)
-
-Precisade (#_n.id -> Funcionario, #_tipoFormacao -> Formacao)
-
-Envia (#_tipoProduto -> Entrega, #_codigo -> Produto)
-
-Contacto (#_n.id -> Funcionario, #_id -> Fornecedor, telefone)
-
-Tem ( #_id -> Fornecedor, #_gerencia -> Seccao, #_diaSemana ->Horario)
-
+LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
 
 ### Passo 7: Entidades Fracas
 
-Não existe Entidades Fracas
+Não existem Entidades Fracas
 
 
 
