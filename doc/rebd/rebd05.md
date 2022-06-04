@@ -190,6 +190,7 @@ SELECT nome
 FROM funcionarios
 
 WHERE armazem= "R"
+
 ---
 [< Previous](rebd04.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) |
 :--- | :---: | 
