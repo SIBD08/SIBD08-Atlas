@@ -164,8 +164,32 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 ## DML
 
-_(Apresentar exemplos dos pedidos SQL à base de dados que demonstrem o cumprimento dos requisitos identificados. Para cada query apresentar numa breve descrição do requisito que pretende resolver e do resultado espectável.)_
+![EsquemaRelacional](images/tabela_dml.png) 
 
+* Mencione o nome do funcionário com o num Funcionário 5:
+
+SELECT nome
+
+FROM Funcionarios
+
+WHERE numFuncionario= “5”
+
+* Mencione todas as matriculas começadas por 0:
+
+
+SELECT matriculas
+
+FROM funcionarios
+
+Where matricula=0
+
+* Mencione os funcionários que trabalham em armazem:
+
+SELECT nome
+
+FROM funcionarios
+
+WHERE armazem= "R"
 ---
 [< Previous](rebd04.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) |
 :--- | :---: | 
