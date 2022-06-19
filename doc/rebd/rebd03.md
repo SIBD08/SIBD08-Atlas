@@ -147,6 +147,7 @@ Encomenda (_codigo,peso,dataEntrega,
            #_codigoCliente -> Cliente, #_codigoViagem -> Viagem, #_codigoSubsidiaria -> Subsidiaria)
            
 Subsidiaria (_codigo, nome)
+
 -> ContactoSubsidiaria (_nome, {contacto})
 
 Viagem (_codigo, nEncomendas, 
