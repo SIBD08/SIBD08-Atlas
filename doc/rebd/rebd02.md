@@ -14,11 +14,12 @@ ENTIDADES
 ASSOCIAÇÔES
 
 * referenteA (CLIENTE, ENCOMENDA) 1:N P/T
-* destino (ENCOMENDA, SUBSIDIARIA, VIAGEM) N:1
-* limiteCarga (ENCOMENDA, VIAGEM, CAMIAO) N:1 T/P
-* condutor (CAMIAO, FUNCIONARIO) 1:1 
-* desempenhadoPor (FUNCIONARIO, FUNCAO) N:1 
-* origem (SUBSIDIARIA, VIAGEM) N:1
+* destino (ENCOMENDA, SUBSIDIARIA) N:1 P/P
+* transporte (ENCOMENDA, VIAGEM) N:1 P/P
+* condutor (CAMIAO, FUNCIONARIO) 1:1 T/P
+* desempenhadoPor (FUNCIONARIO, FUNCAO) N:1 P/P
+* origem (SUBSIDIARIA, VIAGEM) N:1 P/P
+* termino (SUBSIDIARIA, VIAGEM) N:1 P/P
 
  
 ![Diagrama](images/Diagrama_Atlas.jpeg) 
