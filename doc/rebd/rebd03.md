@@ -101,9 +101,9 @@ Não existem Entidades Fracas
 |--------|----|
 |_codigo  |nome|
 
-|Encomenda    |              |    
-|-------------|--------------|
-|_codigo | #_codigo->Cliente|
+|Encomenda    |              |               |               |              |             |
+|-------------|--------------|---------------|--------------|--------------|-------------|
+|_codigo | peso | dataEntrega | #_codigo->Cliente| #_codigo->Viagem | #_codigo->Subsidiaria /
 
 |Subsidiario    |    |                 |                    |
 |---------|----|-----------------|--------------------|
