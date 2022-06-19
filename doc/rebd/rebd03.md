@@ -143,127 +143,88 @@ Não existem Entidades Fracas
 
 Cliente (_codigo, nome)
 
-Encomenda (_codigo, #_codigo->Cliente)
+Encomenda (_codigo,peso,dataEntrega,
+           #_codigoCliente -> Cliente, #_codigoViagem -> Viagem, #_codigoSubsidiaria -> Subsidiaria)
+           
+Subsidiaria (_codigo, nome)
+-> ContactoSubsidiaria (_nome, {contacto})
 
-Subsidiaria (_codigo, nome, #_codigo->Viagem)
+Viagem (_codigo, nEncomendas, 
+        #_codigoSubsidiaria -> Subsidiaria, #_matriculaCamiao -> Camiao)
+        
+Camiao (_matricula, autonomia, capacidadeCarga, 
+        #_funcionarioNFuncionario -> Funcionario)
+        
+Funcionario (_numFuncionario, nome, morada, cc,
+             #_idFuncao -> Funcao)
+             
+-> TelemovelFuncionario (_nome, {telemóvel})
 
-ContactoSubsidiaria (_nome, contacto)
-
-Viagem (_codigo)
-
-Camiao (_matricula, autonomia, capacidadeCarga)
-
-Funcionario (_numFuncionario, nome, morada, cc, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
-
-TelemovelFuncionario (_nome, telemovel)
-
-Funcao (armazém,condutor)
-
-Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
-
-LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
+Funcao (id, nome)
 
 # 2ª Forma Normal (2NF)
 
 Cliente (_codigo, nome)
 
-Encomenda (_codigo, #_codigo->Cliente)
+Encomenda (_codigo,peso,dataEntrega,
+           #_codigoCliente -> Cliente, #_codigoViagem -> Viagem, #_codigoSubsidiaria -> Subsidiaria)
+           
+Subsidiaria (_codigo, nome)
 
-Subsidiaria (_codigo, nome, #_codigo->Viagem)
+ContactoSubsidiaria (_nome, {contacto})
 
-ContactoSubsidiaria (_nome, contacto)
+Viagem (_codigo, nEncomendas, 
+        #_codigoSubsidiaria -> Subsidiaria, #_matriculaCamiao -> Camiao)
+        
+Camiao (_matricula, autonomia, capacidadeCarga, 
+        #_funcionarioNFuncionario -> Funcionario)
+        
+Funcionario (_numFuncionario, nome,
+             #_idFuncao -> Funcao)
+             
+-> DadosFuncionario (_nome, morada, cc)
 
-Viagem (_codigo)
+TelemovelFuncionario (_nome, {telemóvel})
 
-Camiao (_matricula, autonomia, capacidadeCarga)
-
-Funcionario (_numFuncionario, nome, morada, cc, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
-
-TelemovelFuncionario (_nome, telemovel)
-
-Funcao (armazém,condutor)
-
-Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
-
-LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
+Funcao (id, nome)
 
 # 3ª Forma Normal (3NF)
 
 Cliente (_codigo, nome)
 
-Encomenda (_codigo, #_codigo->Cliente)
+Encomenda (_codigo, peso, dataEntrega,
+           #_codigoCliente -> Cliente)
+           
+-> CodigosEncomenda (#_codigoCliente -> Cliente, #_codigoViagem -> Viagem, #_codigoSubsidiaria -> Subsidiaria) 
 
-Subsidiaria (_codigo, nome, #_codigo->Viagem)
+Subsidiaria (_codigo, nome)
 
-ContactoSubsidiaria (_nome, contacto)
+ContactoSubsidiaria (_nome, {contacto})
 
-Viagem (_codigo)
+Viagem (_codigo, nEncomendas, 
+        #_codigoSubsidiaria -> Subsidiaria, #_matriculaCamiao -> Camiao)
+        
+Camiao (_matricula, autonomia, capacidadeCarga, 
+        #_funcionarioNFuncionario -> Funcionario)
+        
+Funcionario (_numFuncionario, nome,
+             #_idFuncao -> Funcao)
+             
+DadosFuncionario (_nome, morada, cc)
 
-Camiao (_matricula, autonomia, capacidadeCarga)
+TelemovelFuncionario (_nome, {telemóvel})
 
-Funcionario (_numFuncionario, nome, morada, cc, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
-
-TelemovelFuncionario (_nome, telemovel)
-
-Funcao (armazém,condutor)
-
-Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
-
-LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
+Funcao (id, nome)
 
 
 # Forma Normal de Boyce-Codd (BCNF)
 
-Cliente (_codigo, nome)
-
-Encomenda (_codigo, #_codigo->Cliente)
-
-Subsidiaria (_codigo, nome, #_codigo->Viagem)
-
-ContactoSubsidiaria (_nome, contacto)
-
-Viagem (_codigo)
-
-Camiao (_matricula, autonomia, capacidadeCarga)
-
-Funcionario (_numFuncionario, nome, morada, cc, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
-
-TelemovelFuncionario (_nome, telemovel)
-
-Funcao (armazém,condutor)
-
-Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
-
-LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
+Não muda.
 
 
 # 4ª Forma Normal (4NF)
 
-Cliente (_codigo, nome)
-
-Encomenda (_codigo, #_codigo->Cliente)
-
-Subsidiaria (_codigo, nome, #_codigo->Viagem)
-
-ContactoSubsidiaria (_nome, contacto)
-
-Viagem (_codigo)
-
-Camiao (_matricula, autonomia, capacidadeCarga)
-
-Funcionario (_numFuncionario, nome, #_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
-
-LocalidadeFuncionario (_nome, morada)
-
-IdentificacaoFuncionario (_nome, cc)
-
-TelemovelFuncionario (_nome, telemovel)
-
-Funcao (armazém,condutor)
-
-Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
-
-LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
+Não muda
 
 [< Previous](rebd02.md) | [^ Main](https://github.com/SIBD08/SIBD08-Atlas/) | [Next >](rebd04.md)
 :--- | :---: | ---: 
