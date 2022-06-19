@@ -31,7 +31,7 @@ Viagem (_codigo, nEncomendas)
 Camiao (_matricula, autonomia, capacidadeCarga, 
         #funcionarioNFuncionario -> Funcionario)
         
-Funcionario (_numFuncionario, nome, {telem贸vel}, morada, cc)
+Funcionario (_numFuncionario, nome, {telemovel}, morada, cc)
 Funcao (id, nome)
 
 
