@@ -4,13 +4,12 @@
 
 ENTIDADES
 
-* CLIENTE (codigo, nome)
-* ENCOMENDA (codigo)
-* SUBSIDIARIA (codigo, nome, contacto)
-* VIAGEM (codigo)
-* CAMIAO (matricula_, autonomia, capacidadeCarga)
-* FUNCIONARIO (numFuncionario, nome, telemovel, morada, cc)
-* FUNCAO (armazem, condutor)
+* CLIENTE (_codigo_, nome)
+* ENCOMENDA (_codigo_, peso, dataEntrega)
+* SUBSIDIARIA (_codigo_, nome, {contacto})
+* VIAGEM (_codigo_, nEncomendas)
+* CAMIAO (_matricula_, autonomia, capacidadeCarga)
+* FUNCIONARIO (_numFuncionario_, nome, {telemovel}, morada, cc)
 
 ASSOCIAÇÔES
 
