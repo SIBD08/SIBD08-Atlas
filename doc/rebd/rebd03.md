@@ -14,7 +14,7 @@ Viagem (_codigo, nEncomendas)
 
 Camiao (_matricula, autonomia, capacidadeCarga)
 
-Funcionario (_numFuncionario, nome, {telem贸vel}, morada, cc)
+Funcionario (_numFuncionario, nome, {telemovel}, morada, cc)
 
 Funcao (id, nome)
 
