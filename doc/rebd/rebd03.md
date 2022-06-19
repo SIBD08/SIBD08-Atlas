@@ -29,7 +29,7 @@ Subsidiaria (_codigo, nome, {contacto})
 Viagem (_codigo, nEncomendas)
 
 Camiao (_matricula, autonomia, capacidadeCarga, 
-        #funcionarioNFuncionario -> Funcionario)
+        #funcionarioNumFuncionario -> Funcionario)
         
 Funcionario (_numFuncionario, nome, {telemovel}, morada, cc)
 Funcao (id, nome)
@@ -49,7 +49,7 @@ Viagem (_codigo, nEncomendas,
         #codigoSubsidiaria -> Subsidiaria, #matriculaCamiao -> Camiao)
         
 Camiao (_matricula, autonomia, capacidadeCarga, 
-        #funcionarioNFuncionario -> Funcionario)
+        #funcionarioNumFuncionario -> Funcionario)
         
 Funcionario (_numFuncionario, nome, {telemovel}, morada, cc
              #idFuncao -> Funcao)
@@ -73,7 +73,7 @@ Viagem (_codigo, nEncomendas,
         #_codigoSubsidiaria -> Subsidiaria, #_matriculaCamiao -> Camiao)
         
 Camiao (_matricula, autonomia, capacidadeCarga, 
-        #_funcionarioNFuncionario -> Funcionario)
+        #_funcionarioNumFuncionario -> Funcionario)
         
 Funcionario (_numFuncionario, nome, {telemovel}, morada, cc
              #_idFuncao -> Funcao)
@@ -115,7 +115,7 @@ Não existem Entidades Fracas
 
 |Camiao  |         |          |                |
 |---------|---------|----------|--------------|
-|_matricula|autonomia|capacidadeCarga| #_nFuncionario->Funcionario
+|_matricula|autonomia|capacidadeCarga| #_numFuncionario->Funcionario
 
 |Funcionario|    |         |         |       |                        |
 |-----------|----|---------|---------|-------|------------------------|
@@ -155,7 +155,7 @@ Viagem (_codigo, nEncomendas,
 -> Subsidiaria, #_matriculaCamiao -> Camiao)
         
 Camiao (_matricula, autonomia, capacidadeCarga, 
-        #_funcionarioNFuncionario -> Funcionario)
+        #_funcionarioNumFuncionario -> Funcionario)
         
 Funcionario (_numFuncionario, nome, morada, cc,
              #_idFuncao -> Funcao)
@@ -179,7 +179,7 @@ Viagem (_codigo, nEncomendas,
         #_codigoSubsidiaria -> Subsidiaria, #_matriculaCamiao -> Camiao)
         
 Camiao (_matricula, autonomia, capacidadeCarga, 
-        #_funcionarioNFuncionario -> Funcionario)
+        #_funcionarioNumFuncionario -> Funcionario)
         
 Funcionario (_numFuncionario, nome,
              #_idFuncao -> Funcao)
@@ -207,7 +207,7 @@ Viagem (_codigo, nEncomendas,
         #_codigoSubsidiaria -> Subsidiaria, #_matriculaCamiao -> Camiao)
         
 Camiao (_matricula, autonomia, capacidadeCarga, 
-        #_funcionarioNFuncionario -> Funcionario)
+        #_funcionarioNumFuncionario -> Funcionario)
         
 Funcionario (_numFuncionario, nome,
              #_idFuncao -> Funcao)
