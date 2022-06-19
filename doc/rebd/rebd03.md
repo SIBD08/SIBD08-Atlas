@@ -6,53 +6,55 @@
 
 Cliente (_codigo, nome)
 
-Encomenda (_codigo)
+Encomenda (_codigo,peso,dataEntrega)
 
-Subsidiaria (_codigo, nome, contacto)
+Subsidiaria (_codigo, nome, {contacto})
 
-Viagem (_codigo)
+Viagem (_codigo, nEncomendas)
 
 Camiao (_matricula, autonomia, capacidadeCarga)
 
-Funcionario (_numFuncionario, nome, telemóvel, morada, cc)
+Funcionario (_numFuncionario, nome, {telem贸vel}, morada, cc)
 
-Funcao (armazém,condutor)
+Funcao (id, nome)
 
 ### Passo 2: Associações 1:1
 
 Cliente (_codigo, nome)
 
-Encomenda (_codigo)
+Encomenda (_codigo,peso,dataEntrega)
 
-Subsidiaria (_codigo, nome, contacto)
+Subsidiaria (_codigo, nome, {contacto})
 
-Viagem (_codigo)
+Viagem (_codigo, nEncomendas)
 
-Camiao (_matricula, autonomia, capacidadeCarga)
+Camiao (_matricula, autonomia, capacidadeCarga, 
+        #funcionarioNFuncionario -> Funcionario)
+        
+Funcionario (_numFuncionario, nome, {telem贸vel}, morada, cc)
+Funcao (id, nome)
 
-Funcionario (_numFuncionario, nome, telemóvel, morada, cc
-#_matricula->camiao)
 
-Funcao (armazém,condutor)
 
 ### Passo 3: Associações 1:N
 
 Cliente (_codigo, nome)
 
-Encomenda (_codigo,
-#_codigo->Cliente)
+Encomenda (_codigo,peso,dataEntrega
+           #codigoCliente -> Cliente, #codigoViagem -> Viagem, #codigoSubsidiaria -> Subsidiaria)
+           
+Subsidiaria (_codigo, nome, {contacto})
 
-Subsidiaria (_codigo, nome, contacto,
-#_codigo->Viagem)
-
-Viagem (_codigo)
-
-Camiao (_matricula, autonomia, capacidadeCarga)
-
-Funcionario (_numFuncionario, nome, telemóvel, morada, cc,
-#_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
-
-Funcao (armazém,condutor)
+Viagem (_codigo, nEncomendas, 
+        #codigoSubsidiaria -> Subsidiaria, #matriculaCamiao -> Camiao)
+        
+Camiao (_matricula, autonomia, capacidadeCarga, 
+        #funcionarioNFuncionario -> Funcionario)
+        
+Funcionario (_numFuncionario, nome, {telem贸vel}, morada, cc
+             #idFuncao -> Funcao)
+             
+Funcao (id, nome)
 
 ### Parte 4: Associações N:M
 
@@ -60,30 +62,31 @@ Não existem associações com cardinalidade N:M
 
 ### Parte 5: Atributo Multivalor 
 
-Não existem Atributos Multivalor
+Cliente (_codigo, nome)
+
+Encomenda (_codigo,peso,dataEntrega
+           #_codigoCliente -> Cliente, #_codigoViagem -> Viagem, #_codigoSubsidiaria -> Subsidiaria)
+           
+Subsidiaria (_codigo, nome, {contacto})
+
+Viagem (_codigo, nEncomendas, 
+        #_codigoSubsidiaria -> Subsidiaria, #_matriculaCamiao -> Camiao)
+        
+Camiao (_matricula, autonomia, capacidadeCarga, 
+        #_funcionarioNFuncionario -> Funcionario)
+        
+Funcionario (_numFuncionario, nome, {telem贸vel}, morada, cc
+             #_idFuncao -> Funcao)
+             
+Funcao (id, nome)
+
+ContactoSub (#_codigo -> Subsidiaria, {contacto})
+
+ContactoFun (#_numFuncionario -> Funcionario, {telemovel})
 
 ### Parte 6: Associações ternárias 
 
-Cliente (_codigo, nome)
-
-Encomenda (_codigo,
-#_codigo->Cliente)
-
-Subsidiaria (_codigo, nome, contacto,
-#_codigo->Viagem)
-
-Viagem (_codigo)
-
-Camiao (_matricula, autonomia, capacidadeCarga)
-
-Funcionario (_numFuncionario, nome, telemóvel, morada, cc,
-#_matricula->camião, #armazem ->Funcao, #condutor->Funcao)
-
-Funcao (armazém,condutor)
-
-Destino (#_codigo->Encomenda, #_codigo->Subsidiaria, #_codigo-> Viagem)
-
-LimiteCarga (#_codigo-> Encomenda, #_codigo-> Viagem, #_matricula->Camiao)
+Não existem associações ternárias
 
 ### Passo 7: Entidades Fracas
 
