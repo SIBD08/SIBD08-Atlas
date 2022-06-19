@@ -150,7 +150,8 @@ Subsidiaria (_codigo, nome)
 -> ContactoSubsidiaria (_nome, {contacto})
 
 Viagem (_codigo, nEncomendas, 
-        #_codigoSubsidiaria -> Subsidiaria, #_matriculaCamiao -> Camiao)
+        #_codigoSubsidiaria 
+-> Subsidiaria, #_matriculaCamiao -> Camiao)
         
 Camiao (_matricula, autonomia, capacidadeCarga, 
         #_funcionarioNFuncionario -> Funcionario)
