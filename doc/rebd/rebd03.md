@@ -103,37 +103,37 @@ Não existem Entidades Fracas
 
 |Encomenda    |              |               |               |              |             |
 |-------------|--------------|---------------|--------------|--------------|-------------|
-|_codigo | peso | dataEntrega | #_codigo->Cliente| #_codigo->Viagem | #_codigo->Subsidiaria /
+|_codigo | peso | dataEntrega | #_codigo->Cliente| #_codigo->Viagem | #_codigo->Subsidiaria 
 
-|Subsidiario    |    |                 |                    |
-|---------|----|-----------------|--------------------|
-|_codigo|nome|contacto|#_codigo->Viagem|
+|Subsidiario    |    |           |
+|---------|----|-----------------|
+|_codigo|nome|contacto|
 
-|Viagem   |     
-|----------|
-|_codigo|
+|Viagem   |           |             |                |
+|----------|-----------|------------|---------------|
+|_codigo| nEncomendas | #_codigo->Subsidiaria | #_matricula->Camiao
 
-|Camiao  |         |          |
-|---------|---------|----------|
-|_matricula|autonomia|capacidadeCarga|
+|Camiao  |         |          |                |
+|---------|---------|----------|--------------|
+|_matricula|autonomia|capacidadeCarga| #_nFuncionario->Funcionario
 
-|Funcionario|    |         |         |       |                        |                   |                  |
-|-----------|----|---------|---------|-------|------------------------|-------------------|-----------------|
-|_numFuncionario | nome | telemovel | morada | cc | #_matricula->camiao | #armazem->funcao | #condutor->funcao |
+|Funcionario|    |         |         |       |                        |
+|-----------|----|---------|---------|-------|------------------------|
+|_numFuncionario | nome | telemovel | morada | cc | #_id->Funcao 
 
 
 |Funcao|    |
 |-------|----|
-|armazem|condutor|
+|_id| nome |
 
-|Destino   |        |       |
-|------------|--------|-------|
-|#_codigo->Encomenda|#_codigo->Subsidiario|#_codigo->Viagem |
+|ContactoSub   |        |
+|------------|--------|
+| #_codigo->Subsidiaria | contacto |
 
 
-|LimiteCarga         |                        |                |
-|-------------------|------------------------|--------------|
-|#_codigo->Encomenda|#_codigo->viagem|#_matricula->Camiao
+|ContactoFun        |                        |
+|-------------------|------------------------|
+| #_numFuncionario->Funcionario | telemovel
 
 
 
