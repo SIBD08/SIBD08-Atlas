@@ -160,6 +160,159 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+--------------------------------------------------------------------------------
+-- MySQL Workbench Synchronization
+-- Generated: 2022-06-20 15:34
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: eduar
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+ALTER SCHEMA `atlas`  DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_general_ci ;
+
+ALTER TABLE `atlas`.`Encomenda` 
+DROP FOREIGN KEY `fk_Encomenda_Cliente`;
+
+ALTER TABLE `atlas`.`Subsidiaria` 
+DROP FOREIGN KEY `nomeSub`;
+
+ALTER TABLE `atlas`.`Viagem` 
+DROP FOREIGN KEY `codigoSubsidiaria02`,
+DROP FOREIGN KEY `matriculaCamiao`;
+
+ALTER TABLE `atlas`.`Camiao` 
+DROP FOREIGN KEY `codViagem`;
+
+ALTER TABLE `atlas`.`Funcionario` 
+DROP FOREIGN KEY `idFuncao`,
+DROP FOREIGN KEY `nomeFuc`,
+DROP FOREIGN KEY `nomeFunc`;
+
+ALTER TABLE `atlas`.`CodigosEncomenda` 
+DROP FOREIGN KEY `codigoCliente`,
+DROP FOREIGN KEY `codigoSubsidiaria`;
+
+ALTER TABLE `atlas`.`Cliente` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ,
+CHANGE COLUMN `Codigo` `Codigo` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `atlas`.`Encomenda` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`Subsidiaria` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`Viagem` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`Camiao` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`Funcionario` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ,
+CHANGE COLUMN `numFuncionario` `numFuncionario` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `atlas`.`Funcao` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`ContactoSubsidiaria` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`DadosFuncionario` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`TelemovelFuncionario` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`CodigosEncomenda` 
+CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+ALTER TABLE `atlas`.`Encomenda` 
+ADD CONSTRAINT `fk_Encomenda_Cliente`
+  FOREIGN KEY (`Cliente_Codigo`)
+  REFERENCES `atlas`.`Cliente` (`Codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `atlas`.`Subsidiaria` 
+ADD CONSTRAINT `nomeSub`
+  FOREIGN KEY (`nome`)
+  REFERENCES `atlas`.`ContactoSubsidiaria` (`nome`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `atlas`.`Viagem` 
+ADD CONSTRAINT `codigoSubsidiaria02`
+  FOREIGN KEY (`Subsidiaria_Codigo`)
+  REFERENCES `atlas`.`Subsidiaria` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `matriculaCamiao`
+  FOREIGN KEY (`Camiao_Matricula`)
+  REFERENCES `atlas`.`Camiao` (`matricula`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `atlas`.`Camiao` 
+DROP FOREIGN KEY `funcionarioNFuncionario`;
+
+ALTER TABLE `atlas`.`Camiao` ADD CONSTRAINT `funcionarioNFuncionario`
+  FOREIGN KEY (`funcionario_numFuncionario`)
+  REFERENCES `atlas`.`Funcionario` (`numFuncionario`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `codViagem`
+  FOREIGN KEY (`Viagem_codigo`)
+  REFERENCES `atlas`.`Viagem` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `atlas`.`Funcionario` 
+ADD CONSTRAINT `idFuncao`
+  FOREIGN KEY (`idFuncao`)
+  REFERENCES `atlas`.`Funcao` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `nomeFuc`
+  FOREIGN KEY (`nome`)
+  REFERENCES `atlas`.`TelemovelFuncionario` (`nome`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `nomeFunc`
+  FOREIGN KEY (`nome`)
+  REFERENCES `atlas`.`DadosFuncionario` (`nome`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `atlas`.`CodigosEncomenda` 
+DROP FOREIGN KEY `codigoViagem`;
+
+ALTER TABLE `atlas`.`CodigosEncomenda` ADD CONSTRAINT `codigoCliente`
+  FOREIGN KEY (`Cliente_Codigo`)
+  REFERENCES `atlas`.`Cliente` (`Codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `codigoViagem`
+  FOREIGN KEY (`Viagem_Codigo`)
+  REFERENCES `atlas`.`Viagem` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `codigoSubsidiaria`
+  FOREIGN KEY (`Subsidiaria_Codigo`)
+  REFERENCES `atlas`.`Subsidiaria` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
 ```
 
 ## DML
