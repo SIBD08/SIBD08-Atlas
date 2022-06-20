@@ -1,6 +1,29 @@
 # C4 : Esquema Relacional  <!-- omit in toc -->
 ![EsquemaRelacional](images/Esquema_relacional.png) 
 
+## Descrição das tabelas:
+
+Encomenda - Informação sobre as encomendas, com acesso a códigos dos clientes.
+
+Cliente - Informação sobre o cliente.
+
+CodigosEncomenda - Todos os códigos.
+
+Subsidiaria - Informação sobre as subsidiarias.
+
+ContactoSubsidiaria - Todos os contactos das subsidiárias.
+
+Viagem - Infomação sobre as viagens, com acesso ao destino e a qual camião está associada a viagem.
+
+Camiao - Informação sobre os camiões, associado à viagem e determinado a um funcionario.
+
+Funcionario - Infomações sobre o funcionário.
+
+TelemovelFuncionario - Todos os numeros de telemóvel dos funcionários.
+
+Funcao - Qual o cargo de cada funcionário.
+
+
 ## Vistas
 
 Não tem.
