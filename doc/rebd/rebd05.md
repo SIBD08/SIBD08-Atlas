@@ -223,9 +223,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 ## DML
 
-
-
 * Camião
+
+![Camião](images/1.png)
 
 INSERT INTO `` (`matricula`,`autonomia`,`capacidadeCarga`,`Viagem_codigo`,`funcionario_numFuncionario`) VALUES ('72-AT-01',2000,10000,1,5);
 INSERT INTO `` (`matricula`,`autonomia`,`capacidadeCarga`,`Viagem_codigo`,`funcionario_numFuncionario`) VALUES ('72-AT-02',2000,10000,2,6);
@@ -246,6 +246,8 @@ INSERT INTO `` (`matricula`,`autonomia`,`capacidadeCarga`,`Viagem_codigo`,`funci
 INSERT INTO `` (`matricula`,`autonomia`,`capacidadeCarga`,`Viagem_codigo`,`funcionario_numFuncionario`) VALUES ('72-AT-17',2000,10000,11,28);
 
 * Cliente
+
+![Cliente](images/2.png)
 
 INSERT INTO  (`Codigo`,`nome`) VALUES (1,'Gil Saraiva');
 INSERT INTO  (Codigo,nome) VALUES (2,'Camilo Batista');
@@ -280,6 +282,8 @@ INSERT INTO  (Codigo,nome) VALUES (30,'Marciano Seabra');
 
 * CodigosEncomenda
 
+![CodigosEncomenda](images/3.png)
+
 INSERT INTO `` (`Cliente_Codigo`,`Viagem_Codigo`,`Subsidiaria_Codigo`) VALUES (1,30,15);
 INSERT INTO `` (`Cliente_Codigo`,`Viagem_Codigo`,`Subsidiaria_Codigo`) VALUES (2,29,14);
 INSERT INTO `` (`Cliente_Codigo`,`Viagem_Codigo`,`Subsidiaria_Codigo`) VALUES (3,28,13);
@@ -312,6 +316,8 @@ INSERT INTO `` (`Cliente_Codigo`,`Viagem_Codigo`,`Subsidiaria_Codigo`) VALUES (2
 INSERT INTO `` (`Cliente_Codigo`,`Viagem_Codigo`,`Subsidiaria_Codigo`) VALUES (30,1,30);
 
 *ContactoSubsidiaria
+
+![ContactoSubsidiaria](images/4.png)
 
 INSERT INTO  (`nome`,`contacto`) VALUES ('Adidas',910302002);
 INSERT INTO  (nome,contacto) VALUES ('Alfa Romeu',960312240);
@@ -346,6 +352,8 @@ INSERT INTO  (nome,contacto) VALUES ('Tiffosi',965899293);
 
 * DadosFuncionario
 
+![DadosFuncionario](images/5.png)
+
 INSERT INTO `` (`nome`,`morada`,`cc`) VALUES ('Albino Vasconcelos','Gaia',17479038);
 INSERT INTO `` (`nome`,`morada`,`cc`) VALUES ('Aleixo Álvares','Paredes',31354779);
 INSERT INTO `` (`nome`,`morada`,`cc`) VALUES ('Altair Saraiva','Espinho',17479034);
@@ -378,6 +386,8 @@ INSERT INTO `` (`nome`,`morada`,`cc`) VALUES ('Rui Alves','Santo Tirso',38924238
 INSERT INTO `` (`nome`,`morada`,`cc`) VALUES ('Sofia Barbosa','Santo Tirso',14265871);
 
 * Encomenda
+
+![Encomenda](images/6.png)
 
 INSERT INTO `` (`Codigo`,`Cliente_Codigo`,`Peso`,`dataEntrega`) VALUES (1,30,1000,'2022-10-12');
 INSERT INTO `` (`Codigo`,`Cliente_Codigo`,`Peso`,`dataEntrega`) VALUES (2,29,8000,'2022-10-29');
@@ -412,10 +422,14 @@ INSERT INTO `` (`Codigo`,`Cliente_Codigo`,`Peso`,`dataEntrega`) VALUES (30,1,201
 
 * Funcao
 
+![Funcao](images/8.png)
+
 INSERT INTO  (`id`,`nome`) VALUES (1,'Condutor');
 INSERT INTO  (id,nome) VALUES (2,'Operador');
 
 * Funcionario
+
+![Funcionario](images/9.png)
 
 INSERT INTO `` (`numFuncionario`,`nome`,`idFuncao`) VALUES (1,'Carlos Batista',1);
 INSERT INTO `` (`numFuncionario`,`nome`,`idFuncao`) VALUES (2,'Pedro Vieira',1);
@@ -450,6 +464,8 @@ INSERT INTO `` (`numFuncionario`,`nome`,`idFuncao`) VALUES (30,'Marciano Brito',
 
 * Subsidiaria
 
+![Subsidiaria](images/10.png)
+
 INSERT INTO  (`codigo`,`nome`) VALUES (2,'Adidas');
 INSERT INTO  (codigo,nome) VALUES (17,'Alfa Romeu');
 INSERT INTO  (`codigo`,`nome`) VALUES (14,'Audi');
@@ -483,6 +499,8 @@ INSERT INTO  (codigo,nome) VALUES (7,'Tiffosi');
 
 * TelemovelFuncionario
 
+![TelemovelFuncionario](images/11.png)
+
 INSERT INTO `` (`nome`,`telemovel`) VALUES ('Albino Vasconcelos',938495587);
 INSERT INTO `` (`nome`,`telemovel`) VALUES ('Aleixo Álvares',913320681);
 INSERT INTO `` (`nome`,`telemovel`) VALUES ('Altair Saraiva',919125934);
@@ -515,6 +533,8 @@ INSERT INTO `` (`nome`,`telemovel`) VALUES ('Rui Alves',914102334);
 INSERT INTO `` (`nome`,`telemovel`) VALUES ('Sofia Barbosa',962262270);
 
 * Viagem
+
+![Viagem](images/12.png)
 
 INSERT INTO `` (`codigo`,`nEncomendas`,`Subsidiaria_Codigo`,`Camiao_Matricula`) VALUES (1,2,1,'72-AT-01');
 INSERT INTO `` (`codigo`,`nEncomendas`,`Subsidiaria_Codigo`,`Camiao_Matricula`) VALUES (2,3,2,'72-AT-02');
