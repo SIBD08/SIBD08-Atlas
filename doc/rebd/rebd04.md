@@ -21,6 +21,8 @@ Funcionario - Infomações sobre o funcionário.
 
 TelemovelFuncionario - Todos os numeros de telemóvel dos funcionários.
 
+DadosFuncionario - Informações aprofundadas sobre o funcionário, que não estão diretamente relacionadas com a empresa.
+
 Funcao - Qual o cargo de cada funcionário.
 
 
