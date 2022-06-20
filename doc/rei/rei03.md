@@ -22,7 +22,7 @@ ASSOCIAÇÔES
 * termino (SUBSIDIARIA, VIAGEM) N:1 P/P
 
  
-![Diagrama](images/Diagrama_Atlas.jpeg) 
+![Diagrama](images/DiagramaAtlas.jpeg) 
 
 
 ## Regras de negócio adicionais (Restrições)
