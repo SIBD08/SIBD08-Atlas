@@ -223,7 +223,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 ## DML
 
-![EsquemaRelacional](images/tabela_dml.png) 
+![EsquemaRelacional]
 
 * Camião
 
