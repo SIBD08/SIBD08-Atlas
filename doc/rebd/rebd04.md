@@ -1,5 +1,5 @@
 # C4 : Esquema Relacional  <!-- omit in toc -->
-![EsquemaRelacional](images/Esquema_relacional.png) 
+![EsquemaRelacional](images/Diagrama_Atlas.jpeg) 
 
 ## Descrição das tabelas:
 
